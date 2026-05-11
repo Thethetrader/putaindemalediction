@@ -2360,3 +2360,33 @@ body {
         letter-spacing: 3px;
     }
 }
+
+/* ── Video mute toggle button ── */
+.video-mute-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    border: 1.5px solid rgba(255,140,0,0.6);
+    color: #ff8c00;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 10;
+}
+
+.video-mute-btn:hover {
+    background: rgba(255,140,0,0.2);
+    transform: scale(1.1);
+}
+
+.video-mute-btn svg {
+    width: 20px;
+    height: 20px;
+}
