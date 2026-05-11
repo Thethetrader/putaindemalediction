@@ -148,7 +148,7 @@ body {
     padding: 20px;
     text-align: center;
     max-width: 800px;
-    margin: 50px auto;
+    margin: 30px auto;
 }
 
 .quote-background {
@@ -450,8 +450,8 @@ body {
 
 .launch-section {
     max-width: 2080px;
-    margin: 80px auto;
-    padding: 40px;
+    margin: 40px auto;
+    padding: 24px 40px;
 }
 
 .launch-container {
@@ -512,8 +512,8 @@ body {
 
 .seasons-section {
     max-width: 2080px;
-    margin: 80px auto;
-    padding: 40px;
+    margin: 40px auto;
+    padding: 20px 40px;
 }
 
 .seasons-title {
@@ -590,7 +590,7 @@ body {
 .season-item {
     display: flex;
     gap: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 36px;
     align-items: flex-start;
     position: relative;
 }
@@ -685,8 +685,8 @@ body {
 
 .explore-seasons-section {
     max-width: 2080px;
-    margin: 80px auto;
-    padding: 40px;
+    margin: 40px auto;
+    padding: 20px 40px;
 }
 
 .explore-title {
@@ -1048,8 +1048,8 @@ body {
 
 .purchase-section {
     max-width: 2080px;
-    margin: 80px auto;
-    padding: 60px 40px;
+    margin: 40px auto;
+    padding: 40px;
     text-align: center;
 }
 
@@ -1102,8 +1102,8 @@ body {
 
 .testimonials-section {
     max-width: 2080px;
-    margin: 80px auto;
-    padding: 60px 40px;
+    margin: 40px auto;
+    padding: 40px;
 }
 
 .testimonials-title {
@@ -1356,8 +1356,8 @@ body {
 .full-width-video-section {
     width: 100%;
     margin-left: 0;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     position: relative;
 }
 
@@ -1427,7 +1427,7 @@ body {
 /* Book Showcase Section */
 .book-showcase-section {
     max-width: 1200px;
-    margin: 80px auto;
+    margin: 40px auto;
     padding: 0;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 20px;
@@ -2224,11 +2224,11 @@ body {
 /* ── Post-episodes CTA banner ── */
 .post-episodes-cta {
     text-align: center;
-    padding: 80px 40px;
+    padding: 50px 40px;
     background: linear-gradient(180deg, transparent 0%, rgba(255,140,0,0.06) 50%, transparent 100%);
     border-top: 1px solid rgba(255,140,0,0.15);
     border-bottom: 1px solid rgba(255,140,0,0.15);
-    margin: 60px 0;
+    margin: 30px 0;
 }
 
 .post-episodes-hook {
@@ -2280,7 +2280,7 @@ body {
 
 /* ── Final CTA section ── */
 .final-cta-section {
-    padding: 100px 40px;
+    padding: 60px 40px;
     text-align: center;
     background: radial-gradient(ellipse at center, rgba(255,140,0,0.07) 0%, transparent 70%);
 }
