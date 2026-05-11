@@ -577,13 +577,15 @@
                 });
 
                 if (isMobile) {
-                    // Sur mobile : accordéon vertical avec transition CSS
+                    // Sur mobile : accordéon vertical fluide
                     episodeCards[fromIndex].classList.add('shrinking');
                     setTimeout(() => {
                         episodeCards.forEach(card => card.classList.remove('shrinking', 'expanding', 'active'));
                         episodeCards[toIndex].classList.add('active');
-                        episodeCards[toIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }, 300);
+                        setTimeout(() => {
+                            episodeCards[toIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 200);
+                    }, 350);
                     return;
                 }
 

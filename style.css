@@ -1826,25 +1826,56 @@ body {
         min-height: 80px;
         max-height: 80px;
         overflow: hidden;
-        transition: max-height 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                    min-height 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                    opacity 0.4s ease;
+        transform: none !important;
+        transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                    opacity 0.35s ease,
+                    border-color 0.3s ease,
+                    box-shadow 0.3s ease;
     }
 
     .episode-card.active {
-        min-height: 340px;
-        max-height: 600px;
+        max-height: 500px;
+        min-height: unset;
+    }
+
+    .episode-card:not(.active) {
+        opacity: 0.75;
     }
 
     .episode-card.shrinking {
         max-height: 80px;
-        opacity: 0.6;
-        transform: none;
-        filter: none;
+        opacity: 0.5;
+        transform: none !important;
+        filter: none !important;
+    }
+
+    .episode-card .episode-content {
+        transition: opacity 0.4s ease 0.2s;
+        opacity: 0;
+    }
+
+    .episode-card.active .episode-content {
+        opacity: 1;
     }
 
     .episode-card:not(.active):not(.expanding) .episode-content {
         padding: 20px 14px 14px 14px;
+    }
+
+    .episode-number {
+        display: block;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.9;
+    }
+
+    .episode-card.active .episode-number {
+        display: none;
     }
 
     /* Purchase section */
