@@ -31,6 +31,10 @@
     
     <header class="hero-section">
         <h1 class="main-title">PUTAIN DE MALÉDICTION</h1>
+        <button class="hero-discover-btn" onclick="document.querySelector('.scroll-content').scrollIntoView({behavior:'smooth', block:'start'})">
+            Découvrir
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </button>
     </header>
     
     <div class="content">        
@@ -141,6 +145,9 @@
                             <div class="season-content">
                                 <h4>Disponible dès maintenant</h4>
                                 <p>Installez-vous confortablement et découvrez dès maintenant <span class="highlight">le premier épisode</span> de notre série audio, il vous est intégralement offert !</p>
+                                <button class="season-cta-btn" onclick="document.querySelector('.explore-seasons-section').scrollIntoView({behavior:'smooth', block:'start'})">
+                                    🎧 Écouter l'épisode 1 — Gratuit
+                                </button>
                                 <div class="audio-wave">
                                     <div class="equalizer">
                                         <div class="bar"></div>
@@ -394,6 +401,17 @@
                 </div>
             </div>
 
+            <!-- CTA after episodes -->
+            <div class="post-episodes-cta">
+                <p class="post-episodes-hook">Vous avez aimé ce que vous avez entendu ?</p>
+                <h2 class="post-episodes-title">Ne ratez pas <span class="highlight">la suite</span></h2>
+                <p class="post-episodes-sub">7 épisodes. 3 saisons. Une seule malédiction.</p>
+                <button class="post-episodes-btn">
+                    <span class="cart-icon">🛒</span>
+                    Acheter le livre complet
+                </button>
+            </div>
+
             <div class="purchase-section">
                 <h2 class="purchase-title">Emportez l'histoire avec vous : <span class="highlight">options d'achat flexibles</span></h2>
                 <p class="purchase-description">Livre complet ou saison par saison : choisissez comment mettre <span class="highlight">"Putain de malédiction"</span> dans vos oreilles, où que vous soyez, selon vos envies. Disponible sur une plateforme d'écoute spécialisée pour une expérience d'écoute optimale.</p>
@@ -474,6 +492,21 @@
                         <span class="indicator" data-slide="1"></span>
                         <span class="indicator" data-slide="2"></span>
                         <span class="indicator" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final CTA after testimonials -->
+            <div class="final-cta-section">
+                <div class="final-cta-inner">
+                    <span class="final-cta-label">Prêt à plonger ?</span>
+                    <h2 class="final-cta-title">Une histoire vraie.<br><span class="highlight">Impossible à lâcher.</span></h2>
+                    <div class="final-cta-buttons">
+                        <button class="book-buy-button final-buy-btn">
+                            <span class="cart-icon">🛒</span>
+                            Acheter le livre
+                        </button>
+                        <a href="auteur.html" class="final-author-link">En savoir plus sur l'auteur →</a>
                     </div>
                 </div>
             </div>

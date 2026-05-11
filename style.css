@@ -125,6 +125,10 @@ body {
     pointer-events: none;
 }
 
+.hero-discover-btn {
+    pointer-events: all;
+}
+
 .main-title {
     font-size: 8rem;
     font-weight: 400;
@@ -2154,5 +2158,208 @@ body {
 
     .punchline-text {
         font-size: 0.95rem;
+    }
+}
+/* ── Hero discover button ── */
+.hero-discover-btn {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    animation: bounce-arrow 2s ease-in-out infinite;
+}
+
+.hero-discover-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.hero-discover-btn:hover {
+    color: #ff8c00;
+}
+
+@keyframes bounce-arrow {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ── Season S.01 CTA ── */
+.season-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 14px 0 10px 0;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1.5px solid #ff8c00;
+    border-radius: 30px;
+    color: #ff8c00;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s, box-shadow 0.25s;
+}
+
+.season-cta-btn:hover {
+    background: rgba(255,140,0,0.12);
+    box-shadow: 0 0 18px rgba(255,140,0,0.3);
+}
+
+/* ── Post-episodes CTA banner ── */
+.post-episodes-cta {
+    text-align: center;
+    padding: 80px 40px;
+    background: linear-gradient(180deg, transparent 0%, rgba(255,140,0,0.06) 50%, transparent 100%);
+    border-top: 1px solid rgba(255,140,0,0.15);
+    border-bottom: 1px solid rgba(255,140,0,0.15);
+    margin: 60px 0;
+}
+
+.post-episodes-hook {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 16px;
+}
+
+.post-episodes-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 4px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.post-episodes-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 36px;
+    letter-spacing: 1px;
+}
+
+.post-episodes-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #ff8c00, #ff4500);
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+    box-shadow: 0 8px 30px rgba(255,140,0,0.35);
+}
+
+.post-episodes-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px rgba(255,140,0,0.5);
+}
+
+/* ── Final CTA section ── */
+.final-cta-section {
+    padding: 100px 40px;
+    text-align: center;
+    background: radial-gradient(ellipse at center, rgba(255,140,0,0.07) 0%, transparent 70%);
+}
+
+.final-cta-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.final-cta-label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ff8c00;
+    margin-bottom: 20px;
+}
+
+.final-cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    letter-spacing: 6px;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 40px;
+}
+
+.final-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.final-buy-btn {
+    font-size: 1.1rem;
+    padding: 18px 50px;
+}
+
+.final-author-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.25s;
+}
+
+.final-author-link:hover {
+    color: #ff8c00;
+}
+
+/* ── Mobile responsive for new CTAs ── */
+@media (max-width: 900px) {
+    .hero-discover-btn {
+        bottom: 30px;
+        font-size: 0.7rem;
+    }
+
+    .post-episodes-cta {
+        padding: 60px 24px;
+    }
+
+    .post-episodes-title {
+        font-size: 2.6rem;
+    }
+
+    .final-cta-section {
+        padding: 70px 24px;
+    }
+
+    .final-cta-title {
+        font-size: 3rem;
+        letter-spacing: 3px;
     }
 }
