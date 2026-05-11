@@ -2259,26 +2259,23 @@ body {
 }
 
 .post-episodes-btn {
+    background: linear-gradient(to right, #f9d423, #ff8c00);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 16px 40px;
-    background: linear-gradient(135deg, #ff8c00, #ff4500);
-    border: none;
-    border-radius: 40px;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: transform 0.25s, box-shadow 0.25s;
-    box-shadow: 0 8px 30px rgba(255,140,0,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .post-episodes-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 40px rgba(255,140,0,0.5);
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
 }
 
 /* ── Final CTA section ── */
