@@ -554,18 +554,23 @@ body {
 }
 
 .social-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 15px;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: transform 0.3s ease;
     color: #ff8c00;
     background: transparent;
     border: 2px solid #ff8c00;
+}
+
+.social-icon svg {
+    width: 18px;
+    height: 18px;
 }
 
 .social-icon:hover {
@@ -1547,6 +1552,26 @@ body {
     box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
 }
 
+.book-listen-button {
+    background: transparent;
+    color: #ff8c00;
+    border: 2px solid #ff8c00;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.book-listen-button:hover {
+    background: #ff8c00;
+    color: #000;
+}
+
 .book-play-button {
     background: rgba(128, 0, 128, 0.8);
     color: white;
@@ -1621,6 +1646,22 @@ body {
    ============================================= */
 
 @media (max-width: 900px) {
+
+    /* Social icons */
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 7px;
+    }
+
+    .social-icon svg {
+        width: 14px;
+        height: 14px;
+    }
 
     /* Header */
     .main-header {
@@ -1697,15 +1738,20 @@ body {
 
     .book-cover-image {
         min-height: unset;
-        aspect-ratio: 739 / 1250;
+        aspect-ratio: 739 / 1600;
         width: 100%;
         border-radius: 12px 12px 0 0;
         background-size: cover !important;
         background-position: center center !important;
+        margin-bottom: 30px;
+    }
+
+    .book-cover-image::before {
+        background-position: center top !important;
     }
 
     .book-content-right {
-        padding: 24px 20px;
+        padding: 8px 20px 24px 20px;
     }
 
     .book-main-title {
@@ -1720,6 +1766,7 @@ body {
     .book-actions {
         flex-wrap: wrap;
         gap: 12px;
+        justify-content: center;
     }
 
     /* Video section */
