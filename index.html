@@ -80,7 +80,7 @@
             
 
             <div class="full-width-video-section">
-                <video class="custom-video" id="video-genese" muted playsinline webkit-playsinline x5-playsinline preload="metadata">
+                <video class="custom-video" id="video-genese" muted playsinline webkit-playsinline x5-playsinline preload="metadata" poster="poster-genese.jpg">
                     <source src="genese.mp4" type="video/mp4">
                 </video>
                 <div class="custom-play-btn" id="play-genese" onclick="toggleVideo('video-genese','play-genese')">
@@ -237,7 +237,7 @@
             </div>
 
             <div class="full-width-video-section second-video-section">
-                <video class="custom-video" id="video-whatsapp" muted playsinline webkit-playsinline x5-playsinline preload="metadata">
+                <video class="custom-video" id="video-whatsapp" muted playsinline webkit-playsinline x5-playsinline preload="metadata" poster="poster-whatsapp.jpg">
                     <source src="WhatsApp Video 2026-04-05 at 14.48.07.mp4" type="video/mp4">
                 </video>
                 <div class="custom-play-btn" id="play-whatsapp" onclick="toggleVideo('video-whatsapp','play-whatsapp')">
@@ -577,31 +577,8 @@
             }
         }
 
-        function extractVideoPoster(video) {
-            const canvas = document.createElement('canvas');
-            const trySeek = () => {
-                canvas.width = video.videoWidth || 1280;
-                canvas.height = video.videoHeight || 720;
-                canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-                try {
-                    const dataURL = canvas.toDataURL('image/jpeg', 0.85);
-                    if (dataURL && dataURL !== 'data:,') video.poster = dataURL;
-                } catch(e) {}
-            };
-            if (video.readyState >= 2) {
-                video.currentTime = 0.5;
-                video.addEventListener('seeked', trySeek, { once: true });
-            } else {
-                video.addEventListener('loadeddata', () => {
-                    video.currentTime = 0.5;
-                    video.addEventListener('seeked', trySeek, { once: true });
-                }, { once: true });
-            }
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.custom-video').forEach(function(video) {
-                extractVideoPoster(video);
                 const wrapper = video.closest('.full-width-video-section');
                 const btn = wrapper ? wrapper.querySelector('.custom-play-btn') : null;
                 if (!btn) return;
