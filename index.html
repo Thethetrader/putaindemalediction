@@ -551,6 +551,17 @@
             audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); prog.style.width = '0%'; };
         }
 
+        // Force loop on iOS where the loop attribute is sometimes ignored
+        document.addEventListener('DOMContentLoaded', function() {
+            const bgVideo = document.querySelector('.video-container video');
+            if (bgVideo) {
+                bgVideo.addEventListener('ended', function() {
+                    bgVideo.currentTime = 0;
+                    bgVideo.play().catch(() => {});
+                });
+            }
+        });
+
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
             const heroSection = document.querySelector('.hero-section');
