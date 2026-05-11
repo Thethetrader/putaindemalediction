@@ -76,12 +76,14 @@
             
 
             <div class="full-width-video-section">
-                <video class="genese-video" controls muted playsinline webkit-playsinline x5-playsinline>
+                <video class="custom-video" id="video-genese" muted playsinline webkit-playsinline x5-playsinline>
                     <source src="genese.mp4" type="video/mp4">
                 </video>
-                <button class="video-play-button">
-                    <span class="play-icon">▶</span>
-                </button>
+                <div class="custom-play-btn" id="play-genese" onclick="toggleVideo('video-genese','play-genese')">
+                    <div class="play-btn-ring"></div>
+                    <svg class="play-btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    <svg class="pause-btn-icon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </div>
             </div>
 
             <div class="launch-section">
@@ -228,9 +230,14 @@
             </div>
 
             <div class="full-width-video-section second-video-section">
-                <video class="genese-video" controls muted playsinline webkit-playsinline x5-playsinline>
+                <video class="custom-video" id="video-whatsapp" muted playsinline webkit-playsinline x5-playsinline>
                     <source src="WhatsApp Video 2026-04-05 at 14.48.07.mp4" type="video/mp4">
                 </video>
+                <div class="custom-play-btn" id="play-whatsapp" onclick="toggleVideo('video-whatsapp','play-whatsapp')">
+                    <div class="play-btn-ring"></div>
+                    <svg class="play-btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    <svg class="pause-btn-icon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </div>
             </div>
 
             <div class="explore-seasons-section">
@@ -518,35 +525,45 @@
             heroSection.style.opacity = opacity;
         });
 
-        // Gestion du bouton play/pause pour la vidéo genese
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.querySelector('.genese-video');
-            const playButton = document.querySelector('.video-play-button');
-            const playIcon = document.querySelector('.play-icon');
+        function toggleVideo(videoId, btnId) {
+            const video = document.getElementById(videoId);
+            const btn = document.getElementById(btnId);
+            const playIcon = btn.querySelector('.play-btn-icon');
+            const pauseIcon = btn.querySelector('.pause-btn-icon');
 
-            if (video && playButton) {
-                playButton.addEventListener('click', function() {
-                    if (video.paused) {
-                        video.play();
-                        playIcon.textContent = '⏸';
-                    } else {
-                        video.pause();
-                        playIcon.textContent = '▶';
-                    }
-                });
-
-                // Hide button when video starts playing
-                video.addEventListener('play', function() {
-                    setTimeout(() => {
-                        playButton.style.opacity = '0';
-                    }, 1000);
-                });
-
-                // Show button when video is paused
-                video.addEventListener('pause', function() {
-                    playButton.style.opacity = '1';
-                });
+            if (video.paused) {
+                video.play().catch(() => {});
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+                setTimeout(() => btn.classList.add('hidden'), 1500);
+            } else {
+                video.pause();
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+                btn.classList.remove('hidden');
             }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.custom-video').forEach(function(video) {
+                const wrapper = video.closest('.full-width-video-section');
+                const btn = wrapper ? wrapper.querySelector('.custom-play-btn') : null;
+                if (!btn) return;
+                video.addEventListener('pause', function() {
+                    const playIcon = btn.querySelector('.play-btn-icon');
+                    const pauseIcon = btn.querySelector('.pause-btn-icon');
+                    playIcon.style.display = 'block';
+                    pauseIcon.style.display = 'none';
+                    btn.classList.remove('hidden');
+                });
+                video.addEventListener('ended', function() {
+                    const playIcon = btn.querySelector('.play-btn-icon');
+                    const pauseIcon = btn.querySelector('.pause-btn-icon');
+                    playIcon.style.display = 'block';
+                    pauseIcon.style.display = 'none';
+                    btn.classList.remove('hidden');
+                });
+            });
         });
 
         // Gestion des épisodes interactifs
