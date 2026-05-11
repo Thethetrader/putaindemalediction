@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antoni Doumbia - L'auteur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="author-page">
+    <header class="main-header">
+        <nav class="header-nav">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Le livre</a>
+                <a href="auteur.html" class="nav-link">L'auteur</a>
+            </div>
+            <button class="header-buy-button">
+                <span class="cart-icon">🛒</span>
+                Acheter le livre
+            </button>
+        </nav>
+    </header>
+
+    <div class="author-photos-container">
+        <div class="author-photo-slide active" style="background-image: url('auteur2.jpeg')"></div>
+    </div>
+
+    <header class="author-hero-section">
+        <div class="author-header">
+            <span class="author-label">À propos</span>
+        </div>
+        
+        <div class="author-content-only">
+            <h2 class="author-name">
+                Antoni<br><span class="highlight">Doumbia</span>
+            </h2>
+            
+            <div class="author-description">
+                <p>Je m'appelle Antoni Doumbia et voici mon histoire. J'ai grandi dans le 18ème arrondissement de Paris. Je suis <span class="highlight">le fruit de l'union d'une métisse bretonne antillaise et d'un père malien</span>. Après avoir été touché par une malédiction familiale venue d'Afrique, je vous conte à travers ce récit mon parcours atypique, mes frasques dans le monde de la nuit, mes succès dans l'univers de la musique avec mon groupe, dont certains n'ignorent peut-être pas quelques classiques. Ce livre ne repose pas sur cet aspect, mais sur cette <span class="highlight">quête de vérité, de réponse et de délivrance</span>. J'ai aussi composé la musique pour une immersion la plus totale.</p>
+            </div>
+        </div>
+    </header>
+    
+    <div class="content">        
+        <section class="scroll-content author-content">
+            <div class="punchline-section">
+                <h3 class="punchline-title">Punchline</h3>
+                <p class="punchline-text">
+                    <em>"Paraît qu'chacun est roi dans son royaume. Pourtant, sur toi, ils veulent tous régner. J'vois des clowns posés sur des trônes. On prie des saints, mais silicannés. La connerie crève la couche d'ozone, <span class="highlight">les imbéciles rêvent de se donner</span>..."</em>
+                </p>
+                <div class="punchline-quote-background">❝</div>
+            </div>
+            
+            <!-- Contenu pour créer du scroll -->
+            <div style="height: 150vh;"></div>
+        </section>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            
+            // Fade effect based on scroll (identical to landing page)
+            const opacity = Math.max(0, 1 - (scrolled / window.innerHeight));
+            
+            // Apply to both photo and text
+            document.querySelector('.author-photos-container').style.opacity = opacity;
+            document.querySelector('.author-hero-section').style.opacity = opacity;
+        });
+    </script>
+</body>
+</html> 
